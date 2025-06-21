@@ -1,8 +1,8 @@
 
 ACTIVE_PROFILE: prod
 
-PRIVATE_KEY: "private.key"
-PUBLIC_KEY: "public.key"
+PRIVATE_KEY:
+PUBLIC_KEY:
 
 POSTGRES_USERNAME: postgres
 POSTGRES_PASSWORD: root
