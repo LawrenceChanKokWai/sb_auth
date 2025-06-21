@@ -27,3 +27,7 @@ eureka:
   client:
     service-url:
       defaultZone: http://${USER_NAME}:${PASSWORD}@localhost:5002/eureka/
+
+ui:
+  app:
+    url: ${UI_APP_URL}
