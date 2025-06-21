@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="fe4a0e73-bc4e-4632-9a3f-601e8be1880e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authorizationserver/src/main/java/com/project/authorizationserver/AuthorizationserverApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/authorizationserver/src/main/java/com/project/authorizationserver/AuthorizationserverApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/authorizationserver/src/main/java/com/project/authorizationserver/security/AuthorizationServerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/authorizationserver/src/main/java/com/project/authorizationserver/security/AuthorizationServerConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authorizationserver/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/authorizationserver/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +37,8 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "sec2__authorization__server__config__setup",
+    "Spring Boot.AuthorizationserverApplication.executor": "Run",
+    "git-widget-placeholder": "sec3__main__configuration__for__auth__server",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/chankokwai/Documents/project_sb_angular/authorizationserver/src/main/resources",
     "node.js.detected.package.eslint": "true",
@@ -80,7 +79,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1750491966443</updated>
-      <workItem from="1750491967942" duration="6870000" />
+      <workItem from="1750491967942" duration="10484000" />
     </task>
     <servers />
   </component>
