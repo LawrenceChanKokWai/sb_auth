@@ -14,6 +14,15 @@ import org.springframework.security.oauth2.server.authorization.config.annotatio
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint;
 import org.springframework.security.web.util.matcher.MediaTypeRequestMatcher;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.CorsConfigurationSource;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+
+import java.util.Arrays;
+import java.util.List;
+
+import static org.springframework.http.HttpHeaders.*;
+import static org.springframework.http.HttpMethod.*;
 
 @Slf4j
 @Configuration
@@ -22,7 +31,7 @@ public class AuthorizationServerConfig {
     @Bean
     @Order(1)
     public SecurityFilterChain authorizationServerConfig(HttpSecurity http, RegisteredClientRepository registeredClientRepository) throws Exception {
-        http.cors(corsConfig -> corsConfig.configurationSource(null));
+        http.cors(corsConfig -> corsConfig.configurationSource(corsConfigurationSource()));
         var authorizationConfig = OAuth2AuthorizationServerConfigurer.authorizationServer()
                 .tokenGenerator(null)
                 .clientAuthentication(authentication -> {
@@ -45,6 +54,18 @@ public class AuthorizationServerConfig {
         return new JdbcRegisteredClientRepository(jdbcTemplate);
     }
 
-
+    @Bean
+    public CorsConfigurationSource corsConfigurationSource() {
+        var corsConfiguration = new CorsConfiguration();
+        corsConfiguration.setAllowCredentials(true);
+        corsConfiguration.setAllowedOrigins(List.of("http://localhost:4200", "http://localhost:3000"));
+        corsConfiguration.setAllowedHeaders(Arrays.asList(ORIGIN, ACCESS_CONTROL_ALLOW_ORIGIN, CONTENT_TYPE, ACCEPT, AUTHORIZATION, "X_REQUESTED_WITH", ACCESS_CONTROL_REQUEST_METHOD, ACCESS_CONTROL_REQUEST_HEADERS, ACCESS_CONTROL_ALLOW_CREDENTIALS));
+        corsConfiguration.setExposedHeaders(Arrays.asList(ORIGIN, ACCESS_CONTROL_ALLOW_ORIGIN, CONTENT_TYPE, ACCEPT, AUTHORIZATION, "X_REQUESTED_WITH", ACCESS_CONTROL_REQUEST_METHOD, ACCESS_CONTROL_REQUEST_HEADERS, ACCESS_CONTROL_ALLOW_CREDENTIALS));
+        corsConfiguration.setAllowedMethods(Arrays.asList(GET.name(), POST.name(), PATCH.name(), PUT.name(), DELETE.name(), OPTIONS.name()));
+        corsConfiguration.setMaxAge(3600L);
+        var source = new UrlBasedCorsConfigurationSource();
+        source.registerCorsConfiguration("/**", corsConfiguration);
+        return source;
+    }
 
 }
