@@ -25,7 +25,10 @@ public class AuthorizationServerConfig {
         http.cors(corsConfig -> corsConfig.configurationSource(null));
         var authorizationConfig = OAuth2AuthorizationServerConfigurer.authorizationServer()
                 .tokenGenerator(null)
-                .clientAuthentication(null)
+                .clientAuthentication(authentication -> {
+                    authentication.authenticationConverter(null);
+                    authentication.authenticationProvider(null);
+                })
                 .oidc(Customizer.withDefaults());
         http
                 .securityMatcher(authorizationConfig.getEndpointsMatcher())

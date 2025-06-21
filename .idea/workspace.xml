@@ -38,7 +38,7 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "Spring Boot.AuthorizationserverApplication.executor": "Run",
-    "git-widget-placeholder": "sec3__main__configuration__for__auth__server",
+    "git-widget-placeholder": "sec3.1__setting__up__clientAuthentication",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/chankokwai/Documents/project_sb_angular/authorizationserver/src/main/resources",
     "node.js.detected.package.eslint": "true",
@@ -79,7 +79,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1750491966443</updated>
-      <workItem from="1750491967942" duration="10484000" />
+      <workItem from="1750491967942" duration="11678000" />
     </task>
     <servers />
   </component>

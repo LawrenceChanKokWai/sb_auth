@@ -1,24 +1,17 @@
 
 ## Authorization Server (Spring Boot)
-## Section 3
+## Section 3.1
 
-### Main Configuration for the Authorization server
+### Main Configuration for the Authorization server (clientAuthentication)
 
-### SecurityFilterChain
-- Create a bean with order of 1. As there will be more than one security filter in the application to run.
-- Configurations required:
-  - cors (on the configurationSource)
-  - authorizationServer of OAuth2AuthorizationServerConfigurer which requires:
-    - tokenGenerator
-    - clientAuthentication 
-      - authenticationConverter 
-      - authenticationProvider
-    - oidc 
-      - use withDefaults
-  - securityMatcher
-    - getEndpointMatcher
-  -exceptionHandling
-    - accessDeniedPage
-    - defaultAuthenticationEntryPointFor
-      - new LoginAuthenticationEntryPoint
-      - new MediaTypeRequestMatcher
+### SecurityFilterChain clientAuthentication
+- clientAuthentication requires:
+  - authenticationConverter
+  - authenticationProvider
+
+```
+  .clientAuthentication(authentication -> {
+    authentication.authenticationConverter(null);
+    authentication.authenticationProvider(null);
+  })
+```
